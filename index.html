@@ -235,7 +235,9 @@ const TRANSLATIONS = {
     res_selected:'Reserva seleccionada',lbl_codigo:'Código reserva',lbl_checkin:'Check-in',lbl_checkout:'Check-out',
     btn_continue:'Continuar →',
     sg_ttl:'¿Cuántas personas hay en la reserva?',
-    sg_sub:'Necesitarás escanear el DNI o pasaporte de cada persona mayor de 14 años.',
+    sg_sub:'Necesitarás escanear o rellenar el DNI o pasaporte de cada persona mayor de 14 años. Los menores de 14 se añaden sin documento en el siguiente paso.',
+    sg_warn_lbl:'Importante:',
+    sg_warn:'indica el número real de personas. Cada huésped debe registrarse (escanear o rellenar su propio documento) — si sois 2 y solo se registra 1, tendréis que volver a entrar para añadir a quien falte.',
     p1:'1 persona',p2:'2 personas',baby_q:'¿Algún bebé en la reserva?',btn_back:'← Volver',
     step2_ey:'Paso 2 de 4',step2_ttl:'Foto del documento',
     step2_sub:'Haz una foto a las dos caras del DNI o pasaporte. La IA leerá los datos automáticamente.',
@@ -281,7 +283,9 @@ const TRANSLATIONS = {
     res_selected:'Selected booking',lbl_codigo:'Booking code',lbl_checkin:'Check-in',lbl_checkout:'Check-out',
     btn_continue:'Continue →',
     sg_ttl:'How many guests are in the booking?',
-    sg_sub:'You will need to scan the ID or passport of every guest over 14 years old.',
+    sg_sub:'You will need to scan or fill in the ID or passport of every guest over 14 years old. Children under 14 are added without a document in the next step.',
+    sg_warn_lbl:'Important:',
+    sg_warn:'enter the real number of people. Every guest must register (scan or fill in their own document) — if there are 2 of you and only 1 registers, you\'ll have to come back to add whoever is missing.',
     p1:'1 person',p2:'2 people',baby_q:'Any babies in the booking?',btn_back:'← Back',
     step2_ey:'Step 2 of 4',step2_ttl:'Document photo',
     step2_sub:'Take a photo of both sides of your ID or passport. AI will read the data automatically.',
@@ -327,7 +331,9 @@ const TRANSLATIONS = {
     res_selected:'Réservation sélectionnée',lbl_codigo:'Code de réservation',lbl_checkin:'Arrivée',lbl_checkout:'Départ',
     btn_continue:'Continuer →',
     sg_ttl:'Combien de personnes sont dans la réservation ?',
-    sg_sub:"Vous devrez scanner la pièce d'identité ou le passeport de chaque personne de plus de 14 ans.",
+    sg_sub:"Vous devrez scanner ou remplir la pièce d'identité ou le passeport de chaque personne de plus de 14 ans. Les enfants de moins de 14 ans sont ajoutés sans document à l'étape suivante.",
+    sg_warn_lbl:'Important :',
+    sg_warn:"indiquez le nombre réel de personnes. Chaque voyageur doit s'enregistrer (scanner ou remplir son propre document) — si vous êtes 2 et qu'une seule personne s'enregistre, vous devrez revenir pour ajouter celle qui manque.",
     p1:'1 personne',p2:'2 personnes',baby_q:"Y a-t-il des bébés ?",btn_back:'← Retour',
     step2_ey:'Étape 2 sur 4',step2_ttl:'Photo du document',
     step2_sub:"Prenez une photo des deux côtés de votre pièce d'identité ou passeport. L'IA lira les données automatiquement.",
@@ -373,7 +379,9 @@ const TRANSLATIONS = {
     res_selected:'Ausgewählte Buchung',lbl_codigo:'Buchungscode',lbl_checkin:'Check-in',lbl_checkout:'Check-out',
     btn_continue:'Weiter →',
     sg_ttl:'Wie viele Personen sind in der Buchung?',
-    sg_sub:'Sie müssen den Ausweis oder Reisepass jeder Person über 14 Jahren scannen.',
+    sg_sub:'Sie müssen den Ausweis oder Reisepass jeder Person über 14 Jahren scannen oder ausfüllen. Kinder unter 14 Jahren werden im nächsten Schritt ohne Dokument hinzugefügt.',
+    sg_warn_lbl:'Wichtig:',
+    sg_warn:'gib die tatsächliche Anzahl der Personen an. Jeder Gast muss sich registrieren (eigenes Dokument scannen oder ausfüllen) — wenn ihr zu zweit seid und sich nur 1 Person registriert, müsst ihr später zurückkommen, um die fehlende Person hinzuzufügen.',
     p1:'1 Person',p2:'2 Personen',baby_q:'Gibt es Babys in der Buchung?',btn_back:'← Zurück',
     step2_ey:'Schritt 2 von 4',step2_ttl:'Dokumentenfoto',
     step2_sub:'Fotografieren Sie beide Seiten Ihres Ausweises oder Reisepasses. Die KI liest die Daten automatisch.',
@@ -419,7 +427,9 @@ const TRANSLATIONS = {
     res_selected:'Prenotazione selezionata',lbl_codigo:'Codice prenotazione',lbl_checkin:'Check-in',lbl_checkout:'Check-out',
     btn_continue:'Continua →',
     sg_ttl:'Quante persone ci sono nella prenotazione?',
-    sg_sub:"Dovrai scansionare il documento d'identità o il passaporto di ogni persona over 14 anni.",
+    sg_sub:"Dovrai scansionare o compilare il documento d'identità o il passaporto di ogni persona over 14 anni. I bambini sotto i 14 anni vengono aggiunti senza documento nel passaggio successivo.",
+    sg_warn_lbl:'Importante:',
+    sg_warn:'indica il numero reale di persone. Ogni ospite deve registrarsi (scansionare o compilare il proprio documento) — se siete in 2 e si registra solo 1 persona, dovrete tornare per aggiungere chi manca.',
     p1:'1 persona',p2:'2 persone',baby_q:'Ci sono bambini piccoli?',btn_back:'← Indietro',
     step2_ey:'Passo 2 di 4',step2_ttl:'Foto del documento',
     step2_sub:"Scatta una foto di entrambi i lati del tuo documento d'identità o passaporto. L'IA leggerà i dati automaticamente.",
@@ -565,8 +575,8 @@ function setLang(lang) {
   <div class="step" id="step-guests">
     <div class="eyebrow">Paso 1 de 4</div>
     <div class="title">¿Cuántas personas hay en la reserva?</div>
-    <div class="subtitle">Necesitarás escanear el DNI o pasaporte de cada persona mayor de 14 años.</div>
-    <div style="font-size:13px;color:var(--text3);margin-top:6px">⚠️ <b style="color:var(--gold)">Importante:</b> indica el número real de personas. Cada huésped debe registrarse (escanear o rellenar su propio documento) — si sois 2 y solo se registra 1, tendréis que volver a entrar para añadir a quien falte.</div>
+    <div class="subtitle">Necesitarás escanear o rellenar el DNI o pasaporte de cada persona mayor de 14 años. Los menores de 14 se añaden sin documento en el siguiente paso.</div>
+    <div style="font-size:13px;color:var(--text3);margin-top:6px">⚠️ <b style="color:var(--gold)" data-i18n="sg_warn_lbl">Importante:</b> <span data-i18n="sg_warn">indica el número real de personas. Cada huésped debe registrarse (escanear o rellenar su propio documento) — si sois 2 y solo se registra 1, tendréis que volver a entrar para añadir a quien falte.</span></div>
     <div id="guest-count-btns" style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:28px 0;">
       <button class="btn btn-out guest-num-btn" onclick="selectGuestCount(1,this)" data-i18n="p1">1 persona</button>
       <button class="btn btn-out guest-num-btn" onclick="selectGuestCount(2,this)" data-i18n="p2">2 personas</button>
