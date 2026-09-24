@@ -566,6 +566,7 @@ function setLang(lang) {
     <div class="eyebrow">Paso 1 de 4</div>
     <div class="title">¿Cuántas personas hay en la reserva?</div>
     <div class="subtitle">Necesitarás escanear el DNI o pasaporte de cada persona mayor de 14 años.</div>
+    <div style="font-size:13px;color:var(--text3);margin-top:6px">⚠️ <b style="color:var(--gold)">Importante:</b> indica el número real de personas. Cada huésped debe registrarse (escanear o rellenar su propio documento) — si sois 2 y solo se registra 1, tendréis que volver a entrar para añadir a quien falte.</div>
     <div id="guest-count-btns" style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:28px 0;">
       <button class="btn btn-out guest-num-btn" onclick="selectGuestCount(1,this)" data-i18n="p1">1 persona</button>
       <button class="btn btn-out guest-num-btn" onclick="selectGuestCount(2,this)" data-i18n="p2">2 personas</button>
@@ -1019,7 +1020,6 @@ function setLang(lang) {
           <label data-i18n="lbl_nviat">Total huéspedes</label>
           <input type="number" id="f-nviat" value="1" min="1" max="20" oninput="updateGuestButtons()">
         </div>
-        <div style="font-size:12px;color:var(--text3);margin-top:-4px;margin-bottom:8px">⚠️ <b style="color:var(--gold)">Importante:</b> indica cuántas personas sois en total y registra a cada una — cada huésped debe escanear o rellenar su propio documento. Si sois 2 y solo se registra 1, tendréis que volver a entrar para añadir a quien falte.</div>
         <div class="card-label" style="margin-top:4px;margin-bottom:8px"><span class="req">*</span> <span id="lbl-contact-section">Contacto</span></div>
         <div class="row2">
           <div class="field">
